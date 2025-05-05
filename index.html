@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ToDoList</title>
+        <link rel="stylesheet" href="/static/styles.css">
+        
+    </head>
+    <body>
+        <main>
+            <h1>To Do List</h1>
+
+            <section>
+                <form action="/" method="post">
+                <!--enter errand-->
+                    <p><input type="text" name="action" required placeholder="Enter Task"> Due: <input type="date" name="due" required min="currentDate()"></p>
+                    <p><input type="submit" value="Enter" name="Done" required></p>
+                </form>
+                <script>
+                    function currentDate(){
+                       const current_date = Date.now();
+                       return current_date
+                    };
+                </script>
+            </section>
+                
+            <section>
+                <!--This section I want to make a to add a check box per task (when I press enter or 
+                the done button a checkbox is added with the task)-->
+                <form action="/">
+                    <fieldset>
+                        <legend>To Do:</legend>
+
+                        <ol>
+                            {%for task in history%}
+                        
+                            
+                                <li id="list"><p><input type="checkbox" id="myCheckBox" fonclick="deleteTask()">Task: {{ task[0] }} - Due: {{ task[1] }}</p></li>    
+                            
+                            
+                            {%endfor%}
+                        </ol>
+                        <script>
+                            function deleteTask()
+                            {
+                                const taskList=document.getElementById('list');
+                                const checkbox=document.getElementById('myCheckBox')
+
+                            }
+                            
+                            
+                        </script>
+                    </fieldset>
+                    
+                </form>
+            </section>
+        </main>
+    </body>
+
+</html>
