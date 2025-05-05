@@ -28,7 +28,7 @@ def backend():
         
     
     print(history)       
-    return render_template('home.html', history=history)
+    return render_template('index.html', history=history)
 
 
 if __name__ == "__main__":
